@@ -62,15 +62,15 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(cache('2 minutes', (req, res) => res.statusCode === 200))
 
 //注册获取用户唯一标识的接口
-app.use('getOpenId',() =>{
-  let code = req.query.code;
-  let appId = 'wx5fa0a902962c1b12';
-  let appSecret ='6e2f94fa021d8054e4ba47c59b6623e5';
-  //发请求给微信服务器
-  let url ='https://api.weixin.qq.com/sns/jscode2session?appid=${appId}&secret=${appSecret}&js_code=&{code}&grant_type=authorization_code'
-  res.send('测试数据');
+// app.use('getOpenId',() =>{
+//   let code = req.query.code;
+//   let appId = 'wx5fa0a902962c1b12';
+//   let appSecret ='6e2f94fa021d8054e4ba47c59b6623e5';
+//   //发请求给微信服务器
+//   let url ='https://api.weixin.qq.com/sns/jscode2session?appid=${appId}&secret=${appSecret}&js_code=&{code}&grant_type=authorization_code'
+//   res.send('测试数据');
 
-}
+// }
 // router
 const special = {
   'daily_signin.js': '/daily_signin',
